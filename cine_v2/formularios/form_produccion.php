@@ -8,23 +8,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form género</title>
+    <title>Form producción</title>
     <link rel="stylesheet" href="../css/avisos.css">
 </head>
 <body>
     
-    <h2>Nuevo Género</h2>
+    <h2>Nueva Producción</h2>
 
-    <form action="insertar_datos/insertar_genero.php" method="get">
+    <form action="insertar_datos/insertar_produccion.php" method="get">
         <fieldset>
-            <legend>Nuevo Género</legend>
+            <legend>Nueva Producción</legend>
             <p>
-                <label for="nombre_genero">Género:</label>
-                <input type="text" id="nombre_genero" name="nombre_genero">
-            </p>
-            <p>
-                <label for="descripcion">Descripción:</label>
-                <input type="text" id="descripcion" name="descripcion">
+                <label for="nombre_produccion">Producción:</label>
+                <input type="text" id="nombre_produccion" name="nombre_produccion">
             </p>
         </fieldset>
         <input type="submit" value="Enviar">

@@ -25,7 +25,7 @@
 
     <h2>Nuevo Actor</h2>
 
-    <form action="insertar_actor.php" method="get">
+    <form action="insertar_datos/insertar_actor.php" method="get">
         <fieldset>
             <legend>Datos del actor</legend>
             <p>

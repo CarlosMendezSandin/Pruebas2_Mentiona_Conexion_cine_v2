@@ -25,7 +25,7 @@
     
     <h2>Nueva Pélicula</h2>
 
-    <form action="insert_pelicula.php" method="get">
+    <form action="insertar_datos/insert_pelicula.php" method="get">
         <fieldset>
             <legend>Datos de la película</legend>
 

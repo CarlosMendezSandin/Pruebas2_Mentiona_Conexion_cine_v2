@@ -25,9 +25,9 @@
 
     <h2>Nuevo Actriz</h2>
 
-    <form action="insertar_actriz.php" method="get">
+    <form action="insertar_datos/insertar_actriz.php" method="get">
         <fieldset>
-            <legend>Datos del Actriz</legend>
+            <legend>Datos de la Actriz</legend>
             <p>
                 <label for="nombre_actriz">Nombre:</label>
                 <input type="text" id="nombre_actriz" name="nombre_actriz" required>
@@ -57,7 +57,7 @@
                 </select>
             </p>
             <p>
-                <label for="actriz_fallecido">Fallecido:</label>
+                <label for="actriz_fallecido">Fallecida:</label>
                 <select name="actriz_fallecido" id="actriz_fallecido">
                     <option value="S">Si</option>
                     <option value="N">No</option>

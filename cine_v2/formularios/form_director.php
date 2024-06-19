@@ -25,7 +25,7 @@
 
     <h2>Nuevo director</h2>
 
-    <form action="insertar_director.php" method="get">
+    <form action="insertar_datos/insertar_director.php" method="get">
         <fieldset>
             <legend>Datos del director</legend>
             <p>

@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+/* Definición de variables */
+:root {
+    --color-borde-elemento: rgb(205, 205, 205);
+}
+
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 400 to 700 */
+
+.dancing-script-700 {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.dancing-script-400 {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    width: 100%;
+}
+/* ============ Clases ===========*/
+.ocultar {
+    /* visibility: hidden; */
+    display: none;
+}
+.texto-negrita {
+    font-weight: 700;
+}
+.texto-cursiva {
+    font-style: italic;
+}
+header {
+    position: relative;
+    height: 50vh;
+    background-image: url("../img/Espanya/Madrid_Spain.jpg");
+    background-size: cover;
+    background-position-x: left;
+    background-position-y: center;
+}
+#contenido {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: rgb(0, 0, 0);
+}
+main {
+    width: 80%;
+    padding-bottom: 67px;
+}
+aside {
+    width: 20%;
+    background-color: rgb(57, 57, 57);
+    color: #eeeeee;
+    padding: 10px;
+}
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* padding: .5%; */
+}
+article {
+    width: calc(96% / 3);
+    /* height: 150px; */ /* Esto sirve para ponerle una altura fija a la caja */
+    /* overflow: scroll; */ /* El overflow scroll me permite ver una barra de desplazamiento cuando el contenido sobrepasa el tamaño de la caja */
+    /* background-color: bisque; */
+    padding: 10px;
+    box-sizing: border-box;
+    border: 4px solid var(--color-borde-elemento);
+    border-radius: 20px;
+    color: var(--color-borde-elemento);
+    margin: 5px;
+    /* box-shadow: 0px 0px 7px rgb(77, 77, 77); */
+}
+
+img {
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    width: 100%;
+}
+
+section>h2 {
+    width: 100%; /* Por el tema del wrap, para que funcione */
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3.5em;
+    text-align: center;
+    border: 4px solid var(--color-borde-elemento);
+    border-radius: 50px;
+    margin-right: 20%;
+    margin-left: 20%;
+    padding: 10px;
+    color: var(--color-borde-elemento);
+
+    /* background-color: yellow; */
+}
+
+figure {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+footer {
+    background-color: black;
+    color: #eeeeee;
+    padding: 10px;
+    text-align: center;
+}
+h1 {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: white;
+    font-size: 5em;
+    margin: 0;
+    text-shadow: 3px 3px 4px #000000;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+h3 {
+    border-bottom: 4px solid var(--color-borde-elemento);
+    margin-right: -10px;
+    margin-left: -10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    color: var(--color-borde-elemento);
+    /* background-color: yellow; */
+}
+h4 {
+    font-family: "Dancing Script", cursive;
+    font-size: 1.5em;
+    color: var(--color-borde-elemento);
+}
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+}
+nav a:focus {
+    border-bottom: 4px solid yellow;
+}
+nav a {
+    width: calc(100% / 5);
+    text-align: center;
+    /* border: 1px solid red; */
+    padding: 15px;
+    /* text-transform: uppercase; */
+    text-decoration: none;
+    font-family: arial;
+    color: rgb(221, 247, 198);
+    background-color: black;
+    border-top: 4px solid black;
+    border-bottom: 4px solid rgb(92, 92, 92);
+    transition-duration: .5s;
+    font-family: "Dancing Script", cursive;
+    font-size: 1.9em;
+}
+nav a:hover {
+    background-color: #bc0000;
+    border-top: 4px solid #bc0000;
+    border-bottom: 4px solid black;
+    color: white;
+}

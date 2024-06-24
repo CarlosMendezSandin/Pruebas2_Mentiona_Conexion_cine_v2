@@ -25,7 +25,7 @@
     
     <h2>Nueva Pélicula</h2>
 
-    <form action="../insertar_datos/insert_pelicula.php" method="get">
+    <form action="../insertar_datos/insertar_pelicula.php" method="get">
         <fieldset>
             <legend>Datos de la película</legend>
 
@@ -133,8 +133,8 @@
                 </select>
             </p>
             <p>
-                <label for="pk_id_produccion">Producción:</label>
-                <select name="pk_id_produccion" id="pk_id_produccion">
+                <label for="fk_id_produccion">Producción:</label>
+                <select name="fk_id_produccion" id="fk_id_produccion">
                     <?php
                     
                         $consulta = "SELECT

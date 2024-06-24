@@ -7,7 +7,7 @@
     /* Capturamos los datos del formulario */
 
     $titulo = $_REQUEST['titulo'];
-    $cartel_pelicula = 'img/carteles_peliculas' .$_REQUEST['cartel_pelicula'];
+    $cartel_pelicula = 'img/' .$_REQUEST['cartel_pelicula'];
     $anio = $_REQUEST['anio'];
     $duracion = $_REQUEST['duracion'];
     $oscar_pelicula = $_REQUEST['oscar_pelicula'];
@@ -15,7 +15,7 @@
     $fk_id_actriz = $_REQUEST['fk_id_actriz'];
     $fk_id_director = $_REQUEST['fk_id_director'];
     $fk_id_genero = $_REQUEST['fk_id_genero'];
-    $pk_id_produccion = $_REQUEST['pk_id_produccion'];
+    $fk_id_produccion = $_REQUEST['fk_id_produccion'];
     $resumen = $_REQUEST['resumen'];
 
 ?>
@@ -44,7 +44,7 @@
                         fk_id_actriz,
                         fk_id_director,
                         fk_id_genero,
-                        pk_id_produccion,
+                        fk_id_produccion,
                         resumen)
                     VALUES(
                         ?,
@@ -68,7 +68,7 @@
 
         /* Enlazar los valores a los marcadores de parámetros */
 
-        $datos->bind_param('ssiisiiiiis', $titulo, $cartel_pelicula, $anio, $duracion, $oscar_pelicula, $fk_id_actor, $fk_id_actriz, $fk_id_director, $fk_id_genero, $pk_id_produccion, $resumen);
+        $datos->bind_param('ssiisiiiiis', $titulo, $cartel_pelicula, $anio, $duracion, $oscar_pelicula, $fk_id_actor, $fk_id_actriz, $fk_id_director, $fk_id_genero, $fk_id_produccion, $resumen);
 
         /* Se ejecuta la sentencia preparada */
 

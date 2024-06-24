@@ -65,6 +65,7 @@
                 </select>
             </p> -->
             <p>
+                <label for="actriz_fallecida">Fallecida:</label>
                 <label for="si">Sí
                     <input type="radio" id="si" name="actriz_fallecida" value="S">
                 </label>

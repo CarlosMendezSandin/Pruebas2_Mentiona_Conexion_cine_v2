@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-2</title>
+
+    <style>
+
+        #contenedor {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 30vh 5vh 50vh 5vh;
+            column-gap: 10px;
+            row-gap: 10px;
+            background-color: blanchedalmond;
+        }
+
+        #enc,
+        #nav,
+        #contenido_principal,
+        #pie {
+            border: 2px solid black;
+        }
+        
+        #enc {
+            grid-column: 1 / 4;
+        }
+
+        #nav {
+            grid-column: 1 / 4;
+        }
+
+        #contenido_principal {
+            grid-column: 1 / 4;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto;
+            column-gap: 10px;
+        }
+
+        section {
+            border: 1px solid red;
+        }
+
+        #pie {
+            grid-column: 1 / 4;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div id="contenedor">
+        <header id="enc">
+            <h1>Encabezado</h1>
+        </header>
+        <nav id="nav">
+            <p>Navegación</p>
+        </nav>
+        <main id="contenido_principal">
+            <section>
+                <h2>Sección 1</h2>
+            </section>
+                
+            <section>
+                <h2>Sección 2</h2>
+            </section>
+
+            <section>
+                <h2>Sección 3</h2>
+            </section>
+        </main>
+        <footer id="pie">
+            Pie de página
+        </footer>
+    </div>
+
+</body>
+</html>

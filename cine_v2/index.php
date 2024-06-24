@@ -7,6 +7,7 @@
                 /* ================ Consulta ================ */
     
     $consulta = "SELECT
+                pk_id_pelicula,
                 titulo,
                 cartel_pelicula,
                 SUBSTRING_INDEX(resumen, ' ', 30) AS resumen,
@@ -45,7 +46,22 @@
                 LIMIT 21";
 
                 /* ============== Captura datos ============== */
-    $datos = $conexion->query($consulta)
+    $datos = $conexion->query($consulta);
+
+    $consulta2 = "SELECT
+                 titulo,
+                 cartel_pelicula,
+                 SUBSTRING_INDEX(resumen, ' ', 10) AS resumen,
+                 anio
+                 FROM
+                 peliculas
+                 WHERE
+                 anio >=
+                 '2024'
+                 ORDER BY
+                 titulo";
+
+    $datos2 = $conexion->query($consulta2);
 
 ?>
 
@@ -55,7 +71,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="Una vuelta por nuestro maravilloso planeta azul. Paisajes, gastronomía, fotografía, costumbres, fauna.">
     <meta name="keywords" content="España, Europa, América, África, Asia, gastronomía, fotografía">
-    <meta name="author" content="Fco. José">
+    <meta name="author" content="Carlos Méndez">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cine para todos</title>
     <link rel="stylesheet" href="css/css_cine_v2.css">
@@ -63,17 +79,11 @@
     <link rel="stylesheet" href="css/avisos.css">
 </head>
 <body>
-    <header>
-        <h1>Cine para todos</h1>
-
-    </header>
-    <nav>
-        <a href="index.php">Inicio</a>
-        <a href="actores.php">Actores</a>
-        <a href="actrices.php">Actrices</a>
-        <a href="directores.php">Directores</a>
-        <a href="php/formularios/administrar.php" target="_blank">Administrar sitio</a>
-    </nav>
+    <?php
+    
+        REQUIRE('enc_pie/enc.php');
+    
+    ?>
     <div id="contenido">
         <main>
             <section id="cine">
@@ -107,7 +117,7 @@
                         </ul>
                     </p>
                     <?=$fila['resumen']?> ...
-                    <p>Más información</p>
+                    <p><a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila['pk_id_pelicula']?>">Más información</a></p>
                 </article>
                 <?php
         
@@ -124,25 +134,40 @@
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti modi, libero nemo facilis consectetur similique impedit quidem earum nisi repellat dolores, fugiat et ipsam esse consequatur fugit asperiores aliquam ad!</p>
 
-            <details>
-                <summary>Cine</summary>
-                <img src="" alt=""><img src="" alt=""><img src="" alt="">
-            </details>
+            <?php
+        
+                while($fila2 = $datos2->fetch_array(MYSQLI_ASSOC)) {
+        
+            ?>
+
+            <img src="<?= $fila2['cartel_pelicula']?>" alt="">
+            <p>
+                <ul>
+                    <li><?=$fila2['titulo']?></li>
+                    <li><?=$fila2['anio']?></li>
+                    <li><?=$fila2['resumen']?></li>
+                </ul>
+            </p>
+
+            <?php
+        
+                }
+        
+            ?>
             
         </aside>
     </div>
-    <footer>
-        <address>
-            &copy;mentiona<br>
-            Saavedra, nº1 · Gijón · Principado de Asturias<br>
-            Curso Aplicaciones web · 2024
-        </address>
-    </footer>
     <?php
 
-    /* ==================== CERRAMOS CONEXIÓN CON BASE DE DATOS ==================== */
+        REQUIRE('enc_pie/pie.php'); 
 
-    REQUIRE('php/formularios/cerrar_conexion.php'); 
+    ?>
+    
+    <?php
+
+        /* ==================== CERRAMOS CONEXIÓN CON BASE DE DATOS ==================== */
+
+        REQUIRE('php/formularios/cerrar_conexion.php'); 
 
     ?>
 </body>

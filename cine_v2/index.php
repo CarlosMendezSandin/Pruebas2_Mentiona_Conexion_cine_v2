@@ -15,10 +15,16 @@
                 duracion,
                 oscar_pelicula,
                 nombre_actor,
+                actor_fallecido,
                 nombre_actriz,
+                actriz_fallecida,
                 nombre_director,
+                director_fallecido,
                 nombre_genero,
-                nombre_produccion
+                nombre_produccion,
+                TIMESTAMPDIFF(YEAR, fecha_nacimiento_actor, CURDATE()) AS edad_actor_calculada,
+                TIMESTAMPDIFF(YEAR, fecha_nacimiento_actriz, CURDATE()) AS edad_actriz_calculada,
+                TIMESTAMPDIFF(YEAR, fecha_nacimiento_director, CURDATE()) AS edad_director_calculada
                 FROM
                 peliculas
                 INNER JOIN
@@ -49,6 +55,7 @@
     $datos = $conexion->query($consulta);
 
     $consulta2 = "SELECT
+                 pk_id_pelicula,
                  titulo,
                  cartel_pelicula,
                  SUBSTRING_INDEX(resumen, ' ', 10) AS resumen,
@@ -75,6 +82,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cine para todos</title>
     <link rel="stylesheet" href="css/css_cine_v2.css">
+    <link rel="stylesheet" href="css/enc.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/avisos.css">
 </head>
@@ -97,27 +105,41 @@
                 ?>
 
                 <article>
+                    <div id="oscar">
+                        <?=$fila['oscar_pelicula'] == 'S' ?  '<img src="img/oscar.png" alt="Pelicula premiada con Oscar" title="Pelicula premiada con Oscar">' : ''?>
+                    </div>
                     <h3><?= $fila['titulo'] ?></h3>
 
                     <img src="<?= $fila['cartel_pelicula']?>" alt="" title="">
                     <p>
                         Año: <?=$fila['anio']?><br>
                         Duración: <?=$fila['duracion']?><br>
-                        Oscar: <?=$fila['oscar_pelicula']?><br>
                         Género: <?=$fila['nombre_genero']?><br>
                         Producción: <?=$fila['nombre_produccion']?>
-                        <ul>
-                            Reparto:
-                            <li><?=$fila['nombre_actor']?></li>
-                            <li><?=$fila['nombre_actriz']?></li>
-                        </ul>
-                        <ul>
+                        <p>
+                           Reparto: 
+                           <ul>
+                               <li>
+                                   <?=$fila['nombre_actor']?> <?=$fila['actor_fallecido'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
+                                   Edad: <?=$fila['edad_actor_calculada']?>
+                               </li>
+                               <li>
+                                   <?=$fila['nombre_actriz']?> <?=$fila['actriz_fallecida'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
+                                   Edad: <?=$fila['edad_actriz_calculada']?>
+                               </li>
+                           </ul>
+                        </p>
+                        <p>
                             Director:
-                            <li><?=$fila['nombre_director']?></li>
-                        </ul>
+                            <ul>
+                                <li><?=$fila['nombre_director']?> <?=$fila['director_fallecido'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
+                                Edad: <?=$fila['edad_director_calculada']?>
+                                </li>
+                            </ul>
+                        </p>
                     </p>
                     <?=$fila['resumen']?> ...
-                    <p><a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila['pk_id_pelicula']?>">Más información</a></p>
+                    <p id="btn_info"><a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila['pk_id_pelicula']?>">Más información</a></p>
                 </article>
                 <?php
         
@@ -140,10 +162,10 @@
         
             ?>
 
-            <img src="<?= $fila2['cartel_pelicula']?>" alt="">
+            <a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila2['pk_id_pelicula']?>"><img src="<?= $fila2['cartel_pelicula']?>" alt=""></a>
             <p>
                 <ul>
-                    <li><?=$fila2['titulo']?></li>
+                    <li><a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila2['pk_id_pelicula']?>"><?=$fila2['titulo']?></a></li>
                     <li><?=$fila2['anio']?></li>
                     <li><?=$fila2['resumen']?></li>
                 </ul>

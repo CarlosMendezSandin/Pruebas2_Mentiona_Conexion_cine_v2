@@ -59,22 +59,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Películas</title>
-    <link rel="stylesheet" href="css/css_cine_v2.css">
-    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/enc.css">
     <link rel="stylesheet" href="css/avisos.css">
+    
+    <style>
+
+        section {
+            display: grid;
+            grid-template-columns: 1r 25%;
+            grid-template-rows: auto auto;
+            column-gap: 20px;
+        }
+
+        h2 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        article {
+            grid-column: 1 / 2;
+        }
+
+        aside {
+            grid-column: 2 / 3;
+        }
+
+        aside>img {
+            width: 100%;
+            border-radius: 20px;
+        }
+        @media screen and (max-width: 576px) {
+            section {
+                grid-template-columns: auto;
+                grid-template-rows: 3;
+            }
+
+            h2 {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+
+            article {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+
+            aside {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+        }
+
+    </style>
+
 </head>
 <body>
 
-        <?php
+    <?php
         
-            REQUIRE('enc_pie/enc.php');
+        REQUIRE('enc_pie/enc.php');
         
-        ?>
-
-    <main>
+    ?>
+    <section>
         <h2>(<?=$fila['pk_id_pelicula']?>) <?=$fila['titulo']?></h2>
-        <p><?=$fila['resumen']?></p>
-    </main>
+        <article>
+            <h3>Sinopsis</h3>
+            <p><?=$fila['resumen']?></p>
+        </article>
+        <aside>
+            <h3>Ficha</h3>
+            <img src="<?=$fila['cartel_pelicula']?>" alt="<?=$fila['titulo']?>">
+            <p>Director: <?=$fila['nombre_director']?></p>
+            <p>Actor: <?=$fila['nombre_actor']?></p>
+            <p>Actriz: <?=$fila['nombre_actriz']?></p>
+            <p>Género: <?=$fila['nombre_genero']?></p>
+            <p>Producción: <?=$fila['nombre_produccion']?></p>
+            <p>Duración: <?=$fila['duracion']?></p>
+            <p>Año: <?=$fila['anio']?></p>
+            <p>Oscar: <?=$fila['oscar_pelicula']?></p>
+
+        </aside>
+    </section>
+
     <footer>
 
         <?php

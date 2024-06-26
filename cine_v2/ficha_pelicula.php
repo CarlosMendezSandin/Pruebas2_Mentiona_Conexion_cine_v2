@@ -20,8 +20,11 @@
                          oscar_pelicula,
                          resumen,
                          nombre_actor,
+                         actor_fallecido,
                          nombre_actriz,
+                         actriz_fallecida,
                          nombre_director,
+                         director_fallecido,
                          nombre_genero,
                          nombre_produccion
                          FROM
@@ -64,30 +67,68 @@
     
     <style>
 
+        body {
+            background-color: black;
+            color: white;
+        }
+
         section {
             display: grid;
-            grid-template-columns: 1r 25%;
-            grid-template-rows: auto auto;
+            grid-template-columns: 3;
+            grid-template-rows: 3;
             column-gap: 20px;
+            row-gap: 20px;
         }
 
         h2 {
-            grid-column-start: 1;
-            grid-column-end: 3;
+            grid-column: 1 / 4;
+            grid-row: 1 / 2;
+            text-align: center;
         }
 
         article {
-            grid-column: 1 / 2;
+            grid-column: 2 / 4;
+            grid-row: 2 / 4;
         }
 
         aside {
-            grid-column: 2 / 3;
+            grid-column: 1 / 2;
+            grid-row: 2 / 4;
+        }
+        aside>img {
+            border-radius: 15px;
         }
 
         aside>img {
-            width: 100%;
+            width: 30%;
             border-radius: 20px;
         }
+
+        h2,
+        article,
+        aside {
+            border: 4px solid rgb(205, 205, 205);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        h2,
+        h3 {
+            font-family: "Dancing Script";
+            text-transform: uppercase;
+        }
+
+        .info_aside {
+            float: right;
+        }
+
+        .oscar{
+            width:  15px;
+            object-fit: contain;
+            position: relative;
+            right: 25px;
+        }
+
         @media screen and (max-width: 576px) {
             section {
                 grid-template-columns: auto;
@@ -108,6 +149,12 @@
                 grid-column: 1 / 2;
                 grid-row: 3 / 4;
             }
+            .oscar{
+                width: 15px;
+                object-fit: contain;
+                position: absolute;
+                right: 25px;
+            }
         }
 
     </style>
@@ -127,17 +174,20 @@
             <p><?=$fila['resumen']?></p>
         </article>
         <aside>
-            <h3>Ficha</h3>
+            <h3>
+                Ficha
+                <?=$fila['oscar_pelicula'] == 'S' ?  '<img class="oscar" src="img/oscar.png" alt="Pelicula premiada con Oscar" title="Pelicula premiada con Oscar">' : ''?>
+            </h3>
             <img src="<?=$fila['cartel_pelicula']?>" alt="<?=$fila['titulo']?>">
-            <p>Director: <?=$fila['nombre_director']?></p>
-            <p>Actor: <?=$fila['nombre_actor']?></p>
-            <p>Actriz: <?=$fila['nombre_actriz']?></p>
-            <p>Género: <?=$fila['nombre_genero']?></p>
-            <p>Producción: <?=$fila['nombre_produccion']?></p>
-            <p>Duración: <?=$fila['duracion']?></p>
-            <p>Año: <?=$fila['anio']?></p>
-            <p>Oscar: <?=$fila['oscar_pelicula']?></p>
-
+            <div class="info_aside">
+                <p>Director: <?=$fila['nombre_director']?> <?=$fila['director_fallecido'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?></p>
+                <p>Actor: <?=$fila['nombre_actor']?> <?=$fila['actor_fallecido'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?></p>
+                <p>Actriz: <?=$fila['nombre_actriz']?> <?=$fila['actriz_fallecida'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?></p>
+                <p>Género: <?=$fila['nombre_genero']?></p>
+                <p>Producción: <?=$fila['nombre_produccion']?></p>
+                <p>Duración: <?=$fila['duracion']?></p>
+                <p>Año: <?=$fila['anio']?></p>
+            </div>
         </aside>
     </section>
 

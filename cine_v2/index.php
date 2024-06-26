@@ -85,6 +85,7 @@
     <link rel="stylesheet" href="css/enc.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/avisos.css">
+    <script src="js/interactividad.js"></script>
 </head>
 <body>
     <?php
@@ -111,35 +112,31 @@
                     <h3><?= $fila['titulo'] ?></h3>
 
                     <img src="<?= $fila['cartel_pelicula']?>" alt="" title="">
-                    <p>
-                        Año: <?=$fila['anio']?><br>
-                        Duración: <?=$fila['duracion']?><br>
-                        Género: <?=$fila['nombre_genero']?><br>
-                        Producción: <?=$fila['nombre_produccion']?>
-                        <p>
-                           Reparto: 
-                           <ul>
-                               <li>
-                                   <?=$fila['nombre_actor']?> <?=$fila['actor_fallecido'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
-                                   Edad: <?=$fila['edad_actor_calculada']?>
-                               </li>
-                               <li>
-                                   <?=$fila['nombre_actriz']?> <?=$fila['actriz_fallecida'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
-                                   Edad: <?=$fila['edad_actriz_calculada']?>
-                               </li>
-                           </ul>
-                        </p>
-                        <p>
-                            Director:
-                            <ul>
-                                <li><?=$fila['nombre_director']?> <?=$fila['director_fallecido'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
-                                Edad: <?=$fila['edad_director_calculada']?>
-                                </li>
-                            </ul>
-                        </p>
-                    </p>
-                    <?=$fila['resumen']?> ...
-                    <p id="btn_info"><a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila['pk_id_pelicula']?>">Más información</a></p>
+                   <p></p>
+                    <div class="info_peliculas">
+                        <div class="info_tecnica">
+                            Año: <?=$fila['anio']?><br>
+                            Duración: <?=$fila['duracion']?><br>
+                            Género: <?=$fila['nombre_genero']?><br>
+                            Producción: <?=$fila['nombre_produccion']?>
+                        </div>
+                        <div class="info_reparto">
+                            Reparto:<br>
+                                <?=$fila['nombre_actor']?> <?=$fila['actor_fallecido'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
+                                Edad: <?=$fila['edad_actor_calculada']?><br>
+                                <?=$fila['nombre_actriz']?> <?=$fila['actriz_fallecida'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
+                                Edad: <?=$fila['edad_actriz_calculada']?><br>
+                        </div>
+                        <div class="info_direccion">
+                            Director:<br>
+                                <?=$fila['nombre_director']?> <?=$fila['director_fallecido'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
+                                Edad: <?=$fila['edad_director_calculada']?><br>
+                        </div>
+                        <div class="info_add">
+                            <?=$fila['resumen']?> ...<br>
+                            <div id="btn_info"><a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila['pk_id_pelicula']?>">Más información</a></div>
+                        </div>
+                    </div>
                 </article>
                 <?php
         
@@ -150,7 +147,7 @@
             </section>
             
         </main>
-        <aside id="info" aria-label="información">
+        <aside class="info_aside" aria-label="información">
 
             <h4 aria-labelledby="info">Últimos estrenos</h4>
 
@@ -162,14 +159,12 @@
         
             ?>
 
-            <a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila2['pk_id_pelicula']?>"><img src="<?= $fila2['cartel_pelicula']?>" alt=""></a>
-            <p>
-                <ul>
-                    <li><a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila2['pk_id_pelicula']?>"><?=$fila2['titulo']?></a></li>
-                    <li><?=$fila2['anio']?></li>
-                    <li><?=$fila2['resumen']?></li>
-                </ul>
-            </p>
+            <div class="estrenos">
+                <p class="est_1"><a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila2['pk_id_pelicula']?>"><?=$fila2['titulo']?></a></p>
+                <p class="est_2"><?=$fila2['anio']?></p>
+                <p class="est_3"><?=$fila2['resumen']?></p>
+                <p class="est_4"><a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila2['pk_id_pelicula']?>"><img src="<?= $fila2['cartel_pelicula']?>" alt=""></a></p>
+            </div>
 
             <?php
         

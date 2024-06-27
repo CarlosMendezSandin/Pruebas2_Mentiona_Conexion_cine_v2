@@ -202,3 +202,23 @@ h4 {
     border-radius: 10px;
     background-color: var(--color-fondo-elemento);
 }
+.info_tecnica,
+.info_reparto,
+.info_direccion,
+.info_add {
+    display: none;
+}
+article:hover {
+    transform: rotateY(180deg);        
+    .info_tecnica,
+    .info_reparto,
+    .info_direccion,
+    .info_add {
+        transform: rotateY(180deg);
+        display: block;
+    }
+
+    article img {
+        display: none;
+    }
+}

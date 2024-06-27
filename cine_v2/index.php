@@ -99,12 +99,12 @@
 
                 <h2>Cine para todos</h2>
 
+
                 <?php
         
                     while($fila = $datos->fetch_array(MYSQLI_ASSOC)) {
         
                 ?>
-
                 <article>
                     <div id="oscar">
                         <?=$fila['oscar_pelicula'] == 'S' ?  '<img src="img/oscar.png" alt="Pelicula premiada con Oscar" title="Pelicula premiada con Oscar">' : ''?>

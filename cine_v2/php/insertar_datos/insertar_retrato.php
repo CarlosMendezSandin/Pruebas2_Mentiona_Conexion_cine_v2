@@ -7,7 +7,7 @@
     //Captura de datos
 
     $titulo_pelicula = $_REQUEST['titulo_pelicula'];
-    $retrato = 'img/retratos' .$_REQUEST['retrato'];
+    $retrato = 'img/retratos/' .$_REQUEST['retrato'];
 
     $consulta = "INSERT INTO retrato(
                  titulo_pelicula,

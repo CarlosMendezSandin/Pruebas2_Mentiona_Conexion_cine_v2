@@ -2,7 +2,7 @@
 
     <h1>Cine para todos</h1>
   
-    <form action="resultado_busqueda.php" method="get">
+    <form action="resultado_busqueda.php" method="get" id="buscador">
         <label for="terminos_busqueda">Buscar:</label>
         <input type="search" id="terminos_busqueda" name="terminos_busqueda" placeholder="Buscar película" autofocus>
     </form>

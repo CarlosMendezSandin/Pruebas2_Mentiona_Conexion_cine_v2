@@ -113,7 +113,7 @@
 
                     <img src="<?= $fila['cartel_pelicula']?>" alt="" title="">
                    <p></p>
-                    <div class="info_peliculas">
+                    <div id="info_peliculas">
                         <div class="info_tecnica">
                             Año: <?=$fila['anio']?><br>
                             Duración: <?=$fila['duracion']?><br>

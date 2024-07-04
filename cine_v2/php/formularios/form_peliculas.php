@@ -6,10 +6,6 @@
     $bd = 'cine_v2';
     $conexion = new mysqli($servidor, $usuario, $pass, $bd);
 
-    if(!$conexion->connect_errno) {
-        echo '<p class = "encendido">CONEXIÓN ABIERTA</p>';
-    }
-
 ?>
 
 <!DOCTYPE html>
@@ -18,13 +14,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Pelicula</title>
-    <link rel="stylesheet" href="../css/avisos.css">
+    <link rel="stylesheet" href="../../css/administrar.css">
 
 </head>
 <body>
     
-    <h2>Nueva Pélicula</h2>
-
     <form action="../insertar_datos/insertar_pelicula.php" method="get">
         <fieldset>
             <legend>Datos de la película</legend>
@@ -152,20 +146,17 @@
                     <option value="" selected hidden>Seleccione una producción</option>
                 </select>
             </p>
+        
+            <label for="resumen">Sinopsis:</label><br>
+            <textarea name="resumen" id="resumen" rows="10" cols="80"></textarea><br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpiar">
         </fieldset>
-        <fieldset>
-            <legend>Sinopsis:</legend>
-            <textarea name="resumen" id="resumen" rows="10" cols="100"></textarea>
-        </fieldset>
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Limpiar">
     </form>
 
     <?php
     
-        if(mysqli_close($conexion)) {
-            echo "<p class='apagado'>La conexión se ha cerrado con éxito</p>";
-        }
+        mysqli_close($conexion)
     
     ?>
 

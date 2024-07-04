@@ -9,12 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form producción</title>
-    <link rel="stylesheet" href="../css/avisos.css">
+    <link rel="stylesheet" href="../../css/administrar.css">
 </head>
 <body>
     
-    <h2>Nueva Producción</h2>
-
     <form action="../insertar_datos/insertar_produccion.php" method="get">
         <fieldset>
             <legend>Nueva Producción</legend>
@@ -22,9 +20,9 @@
                 <label for="nombre_produccion">Producción:</label>
                 <input type="text" id="nombre_produccion" name="nombre_produccion">
             </p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpiar">
         </fieldset>
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Limpiar">
     </form>
 
     <?php

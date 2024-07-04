@@ -9,12 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form género</title>
-    <link rel="stylesheet" href="../css/avisos.css">
+    <link rel="stylesheet" href="../../css/administrar.css">
 </head>
 <body>
     
-    <h2>Nuevo Género</h2>
-
     <form action="../insertar_datos/insertar_genero.php" method="get">
         <fieldset>
             <legend>Nuevo Género</legend>
@@ -26,9 +24,9 @@
                 <label for="descripcion">Descripción:</label>
                 <input type="text" id="descripcion" name="descripcion">
             </p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpiar">
         </fieldset>
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Limpiar">
     </form>
 
     <?php

@@ -7,9 +7,6 @@
     $bd = 'cine_v2';
     $conexion = new mysqli($servidor, $usuario, $pass, $bd);
 
-    if(!$conexion->connect_errno) {
-        echo '<p class = "encendido">CONEXIÓN ABIERTA</p>';
-    }
 
 ?>
 
@@ -19,11 +16,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Actriz</title>
-    <link rel="stylesheet" href="../css/avisos.css">
+    <link rel="stylesheet" href="../../css/administrar.css">
+
 </head>
 <body>
-
-    <h2>Nuevo Actriz</h2>
 
     <form action="../insertar_datos/insertar_actriz.php" method="get">
         <fieldset>
@@ -73,15 +69,13 @@
                 <input type="radio" id="no" name="actriz_fallecida" value="N">
                 </label>
             </p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpiar">
         </fieldset>
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Limpiar">
     </form>
     <?php
 
-    if(mysqli_close($conexion)) {
-        echo "<p class='apagado'>La conexión se ha cerrado con éxito</p>";
-    }
+    mysqli_close($conexion)
 
     ?>
     

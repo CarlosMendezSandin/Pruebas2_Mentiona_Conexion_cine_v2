@@ -7,7 +7,7 @@
     /* Capturamos los datos del formulario */
 
     $nombre_director = $_REQUEST['nombre_director'];
-    $foto_director = 'img/fotos/director' .$_REQUEST['foto_director'];
+    $foto_director = 'img/fotos/director/' .$_REQUEST['foto_director'];
     $edad_director = $_REQUEST['edad_director'];
     $fecha_nacimiento_director = $_REQUEST['fecha_nacimiento_director'];
     $nacionalidad_director = $_REQUEST['nacionalidad_director'];

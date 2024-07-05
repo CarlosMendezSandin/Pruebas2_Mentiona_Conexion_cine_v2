@@ -69,6 +69,7 @@
         body {
             background-color: black;
             color: white;
+            margin: 0px;
         }
 
         section {
@@ -77,6 +78,7 @@
             grid-template-rows: 3;
             column-gap: 20px;
             row-gap: 20px;
+            margin: 20px;
         }
 
         h2 {

@@ -7,7 +7,7 @@
     /* Capturamos los datos del formulario */
 
     $nombre_actor = $_REQUEST['nombre_actor'];
-    $foto_actor = 'img/fotos/actores' .$_REQUEST['foto_actor'];
+    $foto_actor = 'img/fotos/actores/' .$_REQUEST['foto_actor'];
     $edad_actor = $_REQUEST['edad_actor'];
     $fecha_nacimiento_actor = $_REQUEST['fecha_nacimiento_actor'];
     $nacionalidad_actor = $_REQUEST['nacionalidad_actor'];

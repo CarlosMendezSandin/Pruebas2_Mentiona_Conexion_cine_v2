@@ -110,6 +110,7 @@
             flex-wrap: wrap;
             justify-content: space-around;
             color: rgb(205, 205, 205);
+            margin: 20px;
         }
 
         #busqueda {

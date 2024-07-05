@@ -85,7 +85,6 @@
     <link rel="stylesheet" href="css/enc.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/avisos.css">
-    <script src="js/interactividad.js"></script>
 </head>
 <body>
     <?php

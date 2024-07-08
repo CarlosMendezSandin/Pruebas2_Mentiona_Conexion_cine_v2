@@ -84,7 +84,6 @@
     <link rel="stylesheet" href="css/css_cine_v2.css">
     <link rel="stylesheet" href="css/enc.css">
     <link rel="stylesheet" href="css/media.css">
-    <link rel="stylesheet" href="css/avisos.css">
 </head>
 <body>
     <?php

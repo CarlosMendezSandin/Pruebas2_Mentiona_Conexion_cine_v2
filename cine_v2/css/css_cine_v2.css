@@ -203,7 +203,7 @@ h4 {
 
 article:hover {
     transform: rotateY(180deg);
-    background-color: #bc0000;
+    background-color: #6656bc;
     img {
         display: none;
     }

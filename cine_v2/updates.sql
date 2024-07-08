@@ -1,3 +1,5 @@
+/* UPDATES ACTORES */
+
 UPDATE actores
 SET foto_actor = 'img/ZipiZape.png'
 WHERE foto_actor = 'cine/img/fotos/actores/';
@@ -29,6 +31,8 @@ WHERE foto_actor = 'img/fotos/actoresactor_eddie.jpg';
 
 
 delete from actores where pk_id_actor= 115;
+
+/* UPDATES ACTRICES */
 
 SELECT pk_id_actriz,
        nombre_actriz,
@@ -63,3 +67,22 @@ WHERE foto_actriz = 'img/generica.png';
 UPDATE actrices
 SET foto_actriz = 'img/generica_2.png'
 WHERE foto_actriz = 'img/generico.png';
+
+/* UPDATES DIRECTOR */
+
+SELECT pk_id_director,
+       nombre_director,
+       foto_director
+FROM director;
+
+UPDATE director
+SET foto_director = 'img/fotos/directores/director_sam_taylor.jpg '
+WHERE foto_director = 'img/fotos/director/director_sam_taylor.jpg';
+
+UPDATE director
+SET foto_director = 'img/generica.png'
+WHERE foto_director = 'vacio';
+
+UPDATE director
+SET foto_director = 'img/generica.png'
+WHERE foto_director = '';

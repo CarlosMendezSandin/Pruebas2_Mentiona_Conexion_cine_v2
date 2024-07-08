@@ -55,7 +55,7 @@ nav {
 }
 
 nav a:focus {
-    background-color: #bc0000
+    background-color: #6656bc;
 }
 
 nav a {
@@ -72,7 +72,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #bc0000;
+    background-color: #6656bc;
     color: white;
 }
 

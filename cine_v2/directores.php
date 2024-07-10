@@ -100,9 +100,11 @@
                                    Nacionalidad: <?= $fila['nacionalidad_director'] ?><br>
                                    Fallecido: <?= $fila['director_fallecido'] ?> 
                                                         <?= $fila['director_fallecido']== 'S' ? '<span style="color:yellow"> &#8224</span>' : '' ?><br>
-                                    <a href="ficha-filmografia.php?pk_id_director=<?= $fila['pk_id_director']?>">
-                                        Más información
-                                    </a>
+                                    <div id="btn_info">
+                                        <a href="filmografia_directores.php?pk_id_director=<?= $fila['pk_id_director']?>">
+                                            Filmografía
+                                        </a>
+                                    </div>
                                 </div>             
                             </div>
                             

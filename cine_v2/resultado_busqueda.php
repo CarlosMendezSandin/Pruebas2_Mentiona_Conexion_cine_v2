@@ -85,6 +85,22 @@
 
     echo "<p>Nº de resultados encontrados ".$resultado->num_rows."</p>";
 
+    $consulta2 = "SELECT
+                 pk_id_pelicula,
+                 titulo,
+                 cartel_pelicula,
+                 SUBSTRING_INDEX(resumen, ' ', 10) AS resumen,
+                 anio
+                 FROM
+                 peliculas
+                 WHERE
+                 anio >=
+                 '2024'
+                 ORDER BY
+                 titulo";
+
+    $datos2 = $conexion->query($consulta2);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -92,64 +108,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultado busqueda</title>
-    <link rel="stylesheet" href="css/avisos.css">
     <link rel="stylesheet" href="css/css_cine_v2.css">
     <link rel="stylesheet" href="css/enc.css">
-    <style>
-
-        h2,
-        h4 {
-            color: rgb(205, 205, 205);
-            font-family: "Dancing Script", cursive;
-            text-align: center;
-        }
-
-        section {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            color: rgb(205, 205, 205);
-            margin: 20px;
-        }
-
-        #busqueda {
-            display: grid;
-            grid-template-columns: 2;
-            column-gap: 5px;
-            row-gap: 5px;
-            border: 4px solid rgb(205, 205, 205);
-            border-radius: 10px;
-            width: max-content;
-            margin: 5px;
-            padding: 5px;
-            width: 350px;
-        }
-
-        img {
-            grid-column: 1 / 2;
-            width: 150px;
-            height: 200px;
-        }
-        
-        #reparto {
-            grid-column: 2 / 3;
-        }
-
-        #oscar img {
-            grid-column: 2 / 3;
-            height: 50px;
-        }
-
-        #info {
-            grid-column: 1 / 2;
-        }
-
-        #resumen {
-            grid-column: 1 / 3;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
 
@@ -158,44 +119,77 @@
         REQUIRE('enc_pie/enc.php')
     
     ?>
+    
+    <div id="contenido">
+        <main>
+            <section id="cine">
 
-    <h2>Resultados de la busqueda</h2>
-    <h4>La busqueda: <?=$terminos_busqueda?></h4>
+                <h2>Resultados de la busqueda<br>
+                    La busqueda: <?=$terminos_busqueda?>
+                </h2>
 
-    <section>
-        <?php
-        
-            while ($resultado->fetch()) {
-        
-        ?>
-            <section>
-                <div id="busqueda">
-                    <p style="text-align: center; grid-column: 1 / 3;"><?=$titulo?></p>
-                    <img src="<?=$cartel_pelicula?>" alt="<?=$titulo?>" title="<?=$titulo?>">
-                    <div id="reparto">
-                        <p>Actor: <?=$nombre_actor?></p>
-                        <p>Actriz: <?=$nombre_actriz?></p>
-                        <p>Dirección: <?=$nombre_director?></p>
-                    </div>
-                    <div id="info">
-                        <p>Genero: <?=$nombre_genero?></p>
-                        <p>Producción: <?=$nombre_produccion?></p>
-                    </div>
+                <?php
+                    
+                    while ($resultado->fetch()) {
+                    
+                ?>
+                <article>
                     <div id="oscar">
                         <?=$oscar_pelicula == 'S' ? '<img src="img/oscar.png" alt="Película premiada con Oscar" title="Película premiada con Oscar">' : ''?>
                     </div>
-                    <div id="resumen">
-                        <p>sinopsis: <?=$resumen?></p>
-                    </div>
-                </div> 
-            </section>
+                    <h3><?=$titulo?></h3>
+                    <img src="<?=$cartel_pelicula?>" alt="<?=$titulo?>" title="<?=$titulo?>">
+                    <p></p>
+                    <div id="info_peliculas">
+                        <div id="info_tecnica">
+                            <p>Genero: <?=$nombre_genero?></p>
+                            <p>Producción: <?=$nombre_produccion?></p>
+                        </div>
+                        <div id="info_reparto">
+                            <p>Actor: <?=$nombre_actor?></p>
+                            <p>Actriz: <?=$nombre_actriz?></p>
+                            <p>Dirección: <?=$nombre_director?></p>
+                        </div>
+                        <div id="info_add">
+                            <p>sinopsis: <?=$resumen?></p>
+                        </div>
+                    </div> 
+                </article>
+                <?php
+                
+                    }
+            
+                ?>
 
-        <?php
+            </section>
+        </main>
+        <aside class="info_aside" aria-label="información">
+
+            <h4 aria-labelledby="info">Últimos estrenos</h4>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti modi, libero nemo facilis consectetur similique impedit quidem earum nisi repellat dolores, fugiat et ipsam esse consequatur fugit asperiores aliquam ad!</p>
+
+            <?php
         
-            }
-    
-        ?>
-    </section>
+                while($fila2 = $datos2->fetch_array(MYSQLI_ASSOC)) {
+        
+            ?>
+
+            <div class="estrenos">
+                <p class="est_1"><a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila2['pk_id_pelicula']?>"><?=$fila2['titulo']?></a></p>
+                <p class="est_2"><?=$fila2['anio']?></p>
+                <p class="est_3"><?=$fila2['resumen']?></p>
+                <p class="est_4"><a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila2['pk_id_pelicula']?>"><img src="<?= $fila2['cartel_pelicula']?>" alt=""></a></p>
+            </div>
+
+            <?php
+        
+                }
+        
+            ?>
+            
+        </aside>
+    </div>
 
     <?php
     

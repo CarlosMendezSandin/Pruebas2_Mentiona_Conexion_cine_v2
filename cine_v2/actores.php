@@ -95,14 +95,16 @@
                             <p></p>
                             <div id="info_peliculas">
                                 <div id="info_tecnica">
-                                   Fecha nacimiento <?= $fila['fecha_nacimiento_actor'] ?><br>
-                                   Edad: <?= $fila['edad_actor_calculada'] ?><br>
-                                   Nacionalidad: <?= $fila['nacionalidad_actor'] ?><br>
-                                   Fallecido: <?= $fila['actor_fallecido'] ?> 
-                                                        <?= $fila['actor_fallecido']== 'S' ? '<span style="color:yellow"> &#8224</span>' : '' ?><br>
-                                    <a href="ficha-filmografia.php?pk_id_actor=<?= $fila['pk_id_actor']?>">
-                                        Más información
-                                    </a>
+                                   <p>Fecha nacimiento <?= $fila['fecha_nacimiento_actor'] ?></p>
+                                   <p>Edad: <?= $fila['edad_actor_calculada'] ?></p>
+                                   <p>Nacionalidad: <?= $fila['nacionalidad_actor'] ?></p>
+                                   <p>Fallecido: <?= $fila['actor_fallecido'] ?> 
+                                                        <?= $fila['actor_fallecido']== 'S' ? '<span style="color:yellow"> &#8224</span>' : '' ?></p>
+                                    <div id="btn_info">
+                                        <a href="filmografia_actores.php?pk_id_actor=<?= $fila['pk_id_actor']?>">
+                                            Filmografía
+                                        </a>
+                                    </div>
                                 </div>             
                             </div>
                             

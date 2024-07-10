@@ -84,15 +84,17 @@ ul li {
     padding: 5px;
     border: 2px solid rgb(84, 84, 84);
     border-radius: 5px;
+    background-color: #6656bc;
+    color: white;
 }
 
 #caja_1 a:visited {
-    color: purple;
+    color: #380096;
 }
 
 #caja_1 a:hover {
-    color: #bc0000;
-    border: 2px solid #bc0000;
+    background-color: #a5a0d6;
+    border: 2px solid rgb(57, 57, 57);
 }
 form {
     background-color: black;

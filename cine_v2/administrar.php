@@ -1,3 +1,8 @@
+<?php
+
+    REQUIRE('php/formularios/abrir_conexion.php');
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,7 +28,7 @@
 
     <?php
 
-    require('enc_pie/enc.php');
+        require('enc_pie/enc.php');
 
     ?>
 
@@ -55,6 +60,18 @@
                     <a href="php/formularios/form_retrato.php" target="marco">Insertar Retrato</a>
                 </li>
             </ul>
+            <h3>Insertar nuevos datos</h3>
+            <ul>
+                <li>
+                    <a href="php/formularios/form_actores_actualizar.php" target="marco">Actualizar Actor</a>
+                </li>
+                <li>
+                    <a href="php/formularios/form_actrices_actualizar.php" target="marco">Actualizar Actriz</a>
+                </li>
+                <li>
+                    <a href="php/formularios/form_directores_actualizar.php" target="marco">Actualizar Director</a>
+                </li>
+            </ul>
         </div>
 
         <div id="caja_2">
@@ -66,10 +83,15 @@
 
     <?php
 
-    require('enc_pie/pie.php');
+        require('enc_pie/pie.php');
 
     ?>
 
 </body>
 
 </html>
+<?php
+
+    REQUIRE('php/formularios/cerrar_conexion.php');
+
+?>

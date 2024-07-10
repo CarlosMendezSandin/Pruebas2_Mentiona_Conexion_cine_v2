@@ -110,28 +110,28 @@
                     <h3><?= $fila['titulo'] ?></h3>
 
                     <img src="<?= $fila['cartel_pelicula']?>" alt="" title="">
-                   <p></p>
+                    <p></p>
                     <div id="info_peliculas">
                         <div class="info_tecnica">
-                            Año: <?=$fila['anio']?><br>
-                            Duración: <?=$fila['duracion']?><br>
-                            Género: <?=$fila['nombre_genero']?><br>
-                            Producción: <?=$fila['nombre_produccion']?>
+                            <p>Año: <?=$fila['anio']?></p>
+                            <p>Duración: <?=$fila['duracion']?></p>
+                            <p>Género: <?=$fila['nombre_genero']?></p>
+                            <p>Producción: <?=$fila['nombre_produccion']?></p>
                         </div>
                         <div class="info_reparto">
-                            Reparto:<br>
-                                <?=$fila['nombre_actor']?> <?=$fila['actor_fallecido'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
-                                Edad: <?=$fila['edad_actor_calculada']?><br>
-                                <?=$fila['nombre_actriz']?> <?=$fila['actriz_fallecida'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
-                                Edad: <?=$fila['edad_actriz_calculada']?><br>
+                            <p>Reparto:</p>
+                                <p><?=$fila['nombre_actor']?> <?=$fila['actor_fallecido'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
+                                Edad: <?=$fila['edad_actor_calculada']?></p>
+                                <p><?=$fila['nombre_actriz']?> <?=$fila['actriz_fallecida'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
+                                Edad: <?=$fila['edad_actriz_calculada']?></p>
                         </div>
                         <div class="info_direccion">
-                            Director:<br>
-                                <?=$fila['nombre_director']?> <?=$fila['director_fallecido'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
-                                Edad: <?=$fila['edad_director_calculada']?><br>
+                            <p>Director:</p>
+                                <p><?=$fila['nombre_director']?> <?=$fila['director_fallecido'] == 'S' ? '<span style="color:red">&#8224</span>' : ''?><br>
+                                Edad: <?=$fila['edad_director_calculada']?></p>
                         </div>
                         <div class="info_add">
-                            <?=$fila['resumen']?> ...<br>
+                            <p><?=$fila['resumen']?> ...</p>
                             <div id="btn_info"><a href="ficha_pelicula.php?pk_id_pelicula=<?=$fila['pk_id_pelicula']?>">Más información</a></div>
                         </div>
                     </div>

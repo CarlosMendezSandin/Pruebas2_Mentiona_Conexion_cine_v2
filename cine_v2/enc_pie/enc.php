@@ -14,6 +14,6 @@
     <a href="actores.php">Actores</a>
     <a href="actrices.php">Actrices</a>
     <a href="directores.php">Directores</a>
-    <a href="administrar.php" target="_blank">Administrar sitio</a>
+    <a href="administrar.php">Administrar sitio</a>
     
 </nav>

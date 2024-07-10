@@ -126,8 +126,7 @@
         .oscar{
             width:  15px;
             object-fit: contain;
-            position: relative;
-            right: 25px;
+            float: right;
         }
 
         @media screen and (max-width: 576px) {

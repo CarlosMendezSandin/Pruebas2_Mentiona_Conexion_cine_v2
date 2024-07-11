@@ -60,16 +60,22 @@
                     <a href="php/formularios/form_retrato.php" target="marco">Insertar Retrato</a>
                 </li>
             </ul>
-            <h3>Insertar nuevos datos</h3>
+            <h3>Actualizar datos</h3>
             <ul>
                 <li>
-                    <a href="php/formularios/form_actores_actualizar.php" target="marco">Actualizar Actor</a>
+                    <a href="php/formularios/form_seleccionar_actor.php" target="marco">Actualizar Actor</a>
                 </li>
                 <li>
-                    <a href="php/formularios/form_actrices_actualizar.php" target="marco">Actualizar Actriz</a>
+                    <a href="php/formularios/form_seleccionar_actriz.php" target="marco">Actualizar Actriz</a>
                 </li>
                 <li>
-                    <a href="php/formularios/form_directores_actualizar.php" target="marco">Actualizar Director</a>
+                    <a href="php/formularios/form_seleccionar_director.php" target="marco">Actualizar Director</a>
+                </li>
+                <li>
+                    <a href="php/formularios/form_seleccionar_genero.php" target="marco">Actualizar Género</a>
+                </li>
+                <li>
+                    <a href="php/formularios/form_seleccionar_produccion.php" target="marco">Actualizar Producción</a>
                 </li>
             </ul>
         </div>

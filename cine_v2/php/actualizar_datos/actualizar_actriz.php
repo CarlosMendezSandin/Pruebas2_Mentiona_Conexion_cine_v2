@@ -5,6 +5,8 @@
 ?>
 <?php
     // capturamos los datos del formulario
+
+    $pk_id_actriz = $_REQUEST['pk_id_actriz'];
     $nombre_actriz = intval($_REQUEST['nombre_actriz']);
     $foto_actriz = $_REQUEST['foto_actriz'];
     $edad_actriz = intval($_REQUEST['edad_actriz']);
@@ -12,6 +14,20 @@
     $nacionalidad_actriz = $_REQUEST['nacionalidad_actriz'];
     $oscar_actriz = $_REQUEST['oscar'];
     $actriz_fallecido = $_REQUEST['actriz_fallecido'];
+
+    if(empty($nombre_actriz))
+    {
+        echo "Nombre NO modificado";
+    } else {
+        $consulta = "UPDATE
+                    actrices
+                    SET
+                    nombre_actriz = '$nombre_actriz'
+                    WHERE
+                    pk_id_actriz = $pk_id_actriz";
+
+        $conexion->query($consulta);
+    }
 
     if(empty($foto_actriz))
     {
@@ -22,7 +38,7 @@
                     SET
                     foto_actriz = 'img/fotos/actrices/$foto_actriz'
                     WHERE
-                    pk_id_actriz = $nombre_actriz";
+                    pk_id_actriz = $pk_id_actriz";
 
         $conexion->query($consulta);
     }
@@ -36,7 +52,7 @@
                     SET
                     edad_actriz = $edad_actriz
                     WHERE
-                    pk_id_actriz = $nombre_actriz";
+                    pk_id_actriz = $pk_id_actriz";
 
         $conexion->query($consulta);
     }
@@ -50,7 +66,7 @@
                     SET
                     fecha_nacimiento_actriz = '$fecha_nacimiento_actriz'
                     WHERE
-                    pk_id_actriz = $nombre_actriz";
+                    pk_id_actriz = $pk_id_actriz";
 
         $conexion->query($consulta);
     }
@@ -64,7 +80,7 @@
                     SET
                     nacionalidad_actriz = '$nacionalidad_actriz'
                     WHERE
-                    pk_id_actriz = $nombre_actriz";
+                    pk_id_actriz = $pk_id_actriz";
 
         $conexion->query($consulta);
     }
@@ -78,7 +94,7 @@
                     SET
                     oscar = '$oscar'
                     WHERE
-                    pk_id_actriz = $nombre_actriz";
+                    pk_id_actriz = $pk_id_actriz";
 
         $conexion->query($consulta);
     }
@@ -92,7 +108,7 @@
                     SET
                     actriz_fallecido = '$actriz_fallecido'
                     WHERE
-                    pk_id_actriz = $nombre_actriz";
+                    pk_id_actriz = $pk_id_actriz";
 
         $conexion->query($consulta);
     }

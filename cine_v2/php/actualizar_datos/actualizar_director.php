@@ -5,14 +5,30 @@
 ?>
 <?php
     // capturamos los datos del formulario
-    $nombre_director = intval($_REQUEST['nombre_director']);
+
+    $pk_id_director = $_REQUEST['pk_id_director'];
+    $nombre_director = $_REQUEST['nombre_director'];
     $foto_director = $_REQUEST['foto_director'];
-    $edad_director = intval($_REQUEST['edad_director']);
+    $edad_director = $_REQUEST['edad_director'];
     $fecha_nacimiento_director = $_REQUEST['fecha_nacimiento_director'];
     $nacionalidad_director = $_REQUEST['nacionalidad_director'];
-    $oscar_director = $_REQUEST['oscar'];
+    $oscar_director = $_REQUEST['oscar_director'];
     $director_fallecido = $_REQUEST['director_fallecido'];
     $sexo = $_REQUEST['sexo'];
+
+    if(empty($nombre_director))
+    {
+        echo "Nombre NO modificado";
+    } else {
+        $consulta = "UPDATE
+                    director
+                    SET
+                    nombre_director = '$nombre_director'
+                    WHERE
+                    pk_id_director = $pk_id_director";
+
+        $conexion->query($consulta);
+    }
 
     if(empty($foto_director))
     {
@@ -23,7 +39,7 @@
                     SET
                     foto_director = 'img/fotos/directores/$foto_director'
                     WHERE
-                    pk_id_director = $nombre_director";
+                    pk_id_director = $pk_id_director";
 
         $conexion->query($consulta);
     }
@@ -37,7 +53,7 @@
                     SET
                     edad_director = $edad_director
                     WHERE
-                    pk_id_director = $nombre_director";
+                    pk_id_director = $pk_id_director";
 
         $conexion->query($consulta);
     }
@@ -51,7 +67,7 @@
                     SET
                     fecha_nacimiento_director = '$fecha_nacimiento_director'
                     WHERE
-                    pk_id_director = $nombre_director";
+                    pk_id_director = $pk_id_director";
 
         $conexion->query($consulta);
     }
@@ -65,21 +81,21 @@
                     SET
                     nacionalidad_director = '$nacionalidad_director'
                     WHERE
-                    pk_id_director = $nombre_director";
+                    pk_id_director = $pk_id_director";
 
         $conexion->query($consulta);
     }
 
-    if(empty($oscar))
+    if(empty($oscar_director))
     {
         echo "Oscar NO modificado";
     } else {
         $consulta = "UPDATE
                     director
                     SET
-                    oscar = '$oscar'
+                    oscar_director = '$oscar_director'
                     WHERE
-                    pk_id_director = $nombre_director";
+                    pk_id_director = $pk_id_director";
 
         $conexion->query($consulta);
     }
@@ -93,7 +109,7 @@
                     SET
                     director_fallecido = '$director_fallecido'
                     WHERE
-                    pk_id_director = $nombre_director";
+                    pk_id_director = $pk_id_director";
 
         $conexion->query($consulta);
     }
@@ -107,7 +123,7 @@
                     SET
                     sexo = '$sexo'
                     WHERE
-                    pk_id_director = $nombre_director";
+                    pk_id_director = $pk_id_director";
 
         $conexion->query($consulta);
     }
@@ -122,6 +138,8 @@
 </head>
 <body>
     
+    <h2></h2>
+
 </body>
 </html>
 <?php

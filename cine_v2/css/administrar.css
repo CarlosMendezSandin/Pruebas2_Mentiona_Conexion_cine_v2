@@ -76,7 +76,6 @@ ul {
 
 ul li {
     line-height: 35px;
-    /* display: inline-block; */
 }
 
 #caja_1 a {
@@ -106,6 +105,14 @@ form {
 #caja_2 label {
     display: inline-block;
     width: 150px;
+}
+
+#img_profesional {
+    display: block;
+    width: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 legend {

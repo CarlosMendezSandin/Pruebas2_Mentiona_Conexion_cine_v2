@@ -53,7 +53,7 @@ h2 {
     border: 4px solid rgb(205, 205, 205);
     padding: 10px;
     color: rgb(205, 205, 205);
-    background-color: black;
+    background-color: rgba(102, 86, 188,0.6);
     height: max-content;
     margin-left: 20px;
 }
@@ -96,7 +96,8 @@ ul li {
     border: 2px solid rgb(57, 57, 57);
 }
 form {
-    background-color: black;
+    background-color: rgba(102, 86, 188,0.6);
+    border-radius: 5px;
     color: white;
     font-family: "Dancing Script", cursive;
     font-size: 1.2em;

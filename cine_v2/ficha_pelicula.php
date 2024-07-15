@@ -70,6 +70,10 @@
             background-color: black;
             color: white;
             margin: 0px;
+            background-image: url('img/fondo_cine_v2.jpg');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         section {
@@ -85,16 +89,19 @@
             grid-column: 1 / 4;
             grid-row: 1 / 2;
             text-align: center;
+            background-color: rgba(102, 86, 188,0.6);
         }
 
         article {
             grid-column: 2 / 4;
             grid-row: 2 / 4;
+            background-color: rgba(102, 86, 188,0.6);
         }
 
         aside {
             grid-column: 1 / 2;
             grid-row: 2 / 4;
+            background-color: rgba(102, 86, 188,0.6);
         }
         aside>img {
             border-radius: 15px;
